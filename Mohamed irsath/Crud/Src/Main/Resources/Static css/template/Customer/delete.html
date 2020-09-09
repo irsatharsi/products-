@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts :: header"></head>
+<body>
+
+<nav th:replace="layouts :: navbar"></nav>
+	
+	<div class="container__delete">
+		<form action="/del" th:object="${customer}" method="POST">
+      
+		        <select name="firstName" id="firstName" class="form__select select__name" th:field="${customer.customerId}">
+		    		<option 
+						th:each="acustomer : ${customerList}" 
+						th:value="${acustomer.customerId}" 
+						th:text="${acustomer.firstName}">
+					</option>
+		  		</select>
+		  		
+		    	<button type="submit" class="form__submit">Delete</button>
+      
+		</form>
+	</div>
+</body>
+</html>
