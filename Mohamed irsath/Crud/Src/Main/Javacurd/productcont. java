@@ -1,0 +1,96 @@
+Package com.irsath.curd.controller;
+import com,irsath.crud.example.entity.product;
+
+import com,irsath.crud.example.service.productservice;
+
+import org.springframework.beans.factory,annotation.autoweirt;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
+
+@RestController
+
+public class ProductController {
+
+                @autowired
+
+                Private ProductService service;
+
+                @PostMapping("/addProduct")
+
+                Public Product addProduct(@Requestbody Product product)
+
+                {
+
+                return Service.saveProduct(product);
+
+                }
+
+                @PostMapping("/addProducts")
+
+                Public List< Product> addProduct(@Requestbody List<Product>products)
+
+                {
+
+                return Service.saveProducts(products);
+
+                }
+
+                @GetMapping("/Products ")
+
+                Public List<Product> findAllProducts()
+
+                {
+
+                return service.getProducts();
+
+                }
+
+                @GetMapping("/Product/{id} ")
+
+                Public Product findbyId(@Pathvariable int Id)
+
+                {
+
+                return service.getProductbyId(Id);
+
+                }
+
+                @GetMapping("/Product/{name} ")
+
+                Public Product findbyId(@Pathvariable string name)
+
+                {
+
+                return service.getProductbyname(name);
+
+                }
+
+                @PutMapping("/update")
+
+                Public Product updateProduct(@Requestbody Product product)
+
+                {
+
+                return service.updateProduct(product);
+
+                }
+
+                @DeleteMapping("/delete/{Id}")
+
+                Public string deleteProduct(@Pathvariable int Id)
+
+                {
+
+                return service.deleteProduct(id);
+
+                }
+
+ 
+
+}
