@@ -1,1 +1,32 @@
 
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts :: header"></head>
+<body>
+
+	<nav th:replace="layouts :: navbar"></nav>
+
+	<div class="container">
+		<table>
+			<thead>
+				<tr>
+					<th>FirstName</th>
+					<th>LastName</th>
+					<th>Age</th>
+					<th>Nationality</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="aCustomer : ${customerList}">
+			  		<td th:text="${aCustomer.firstName}">
+			  		<td th:text="${aCustomer.lastName}">
+			  		<td th:text="${aCustomer.age}">
+			  		<td th:text="${aCustomer.nationality}">
+			  		<td th:text="${aCustomer.email}">
+		  		</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
