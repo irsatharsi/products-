@@ -1,0 +1,92 @@
+Package com.irsath.curd.service;
+import org.springframework.beans.factory.annotation.autoweirt;
+
+import org.framework.sterotype.service:
+
+import java.util.List;
+
+@service
+
+public class ProductService {
+
+                @autowired
+
+                Private ProductRepository repository;
+
+                Public Product saveProduct(Product product)
+
+                {
+
+                return repository.save(product);
+
+                }
+
+                Public list<Product> saveProducts(List<Product> products)
+
+                {
+
+                return repository.saveAll(Products);
+
+                }
+
+                Public list<Product> getProducts()
+
+                {
+
+                return repository.findall();
+
+                }
+
+                Public Product getProductbyId(int Id)
+
+                {
+
+                return repository.findbyId(id). orElse(null);
+
+                }
+
+                Public Product getProductbyName(string Name)
+
+                {
+
+                return repository.findbyName(Name);
+
+                }
+
+                Public string deleteProduct(int Id)
+
+                {
+
+                repository.deletebyId(Id)
+
+                return "product removed !!" +Id ;
+
+                }
+
+                Public Product updateProduct( Product product)
+
+                {
+
+                Product existingProduct = repository.findbyId(Product.getId()).orElse(null):
+
+                existingProduct.setName(Product.getName());
+
+                existingProduct.setQuantity(Product.getQuantity());
+
+                existingProduct.setPrice(Product.getPrice());
+
+                return repository.save(existingProduct);
+
+ 
+
+ 
+
+                                // TODO Auto-generated method stub
+
+ 
+
+                }
+
+ 
+
+}
