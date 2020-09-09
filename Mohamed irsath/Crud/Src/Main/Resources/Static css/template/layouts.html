@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/table.css}">
+</head>
+
+<body>
+
+	<nav th:fragment="navbar">
+	
+		<div class="navigation">
+		    <ul>
+		      <li><a th:href="@{/}">Home</a></li>
+		      <li><a th:href="@{/create}">Create</a></li>
+		      <li><a th:href="@{/update}">Update</a></li>
+		      <li><a th:href="@{/read}">Read</a></li>
+		      <li><a th:href="@{/delete}">Delete</a></li>
+		    </ul>
+	     </div>
+	</nav>
+</body>
+</html>
