@@ -1,1 +1,38 @@
 
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts :: header"></head>
+<body>
+
+  <nav th:replace="layouts :: navbar"></nav>
+
+	<div class="container">
+	
+		<form action="/save" th:object="${customer}" method="POST">
+				<label for="firstName">FirstName:</label>
+		    	<input type="text" placeholder="FirstName" id="firstName"class="form__input" th:field="${customer.firstName}" required>
+		    	
+		    	<label for="lastName">LastName:</label>
+		    	<input type="text" placeholder="LastName" id="lastName"class="form__input" th:field="${customer.lastName}">
+		    	
+		    	<label for="age">Age:</label>
+		    	<input type="number" placeholder="age" id="age"class="form__input" th:field="${customer.age}" required>
+		    	 
+		    	 
+		    	<label for="nationality">Nationality:</label>
+		    	<select id="nationality" class="form__select" th:field="${customer.nationality}" required>
+				      <option th:value="indian" selected>Indian</option>
+				      <option th:value="chinese">Chinese</option>
+				      <option th:value="american">American</option>
+				      <option th:value="other">Other</option>
+		    	</select>
+		    
+		    	<label for="email">Email Address</label>
+		    	<input type="email" placeholder="Email Address" id="email"class="form__input" th:field="${customer.email}" required>
+		    	
+		    	<button type="submit" class="form__submit">Submit</button>
+		</form>
+		
+	</div>
+</body>
+</html>
